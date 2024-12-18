@@ -7,7 +7,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ['author', 'text', 'created_at']
+        fields = ['id', 'author', 'text', 'created_at']
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -20,7 +20,3 @@ class PostSerializer(serializers.ModelSerializer):
 
     def get_likes_count(self, obj):
         return obj.likes.count()
-
-
-
-
